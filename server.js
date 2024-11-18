@@ -19,14 +19,16 @@ const communcationLogConsumer = require("./src/recievers/CommunicationLog.sub")
 const Receive = require("./src/rabbit/Recieve.class");
 
 const app = express();
-// app.use(cors())
-const allowedOrigin = 'https://crm-frontend-five-rouge.vercel.app/'; // Replace with your frontend URL
-
-app.use(cors({
-    origin: allowedOrigin,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Optional: specify allowed HTTP methods
-    credentials: true, // Optional: enable cookies and other credentials
+ app.use(cors({
+     origin:'*',
 }));
+// const allowedOrigin = 'https://crm-frontend-five-rouge.vercel.app/'; // Replace with your frontend URL
+
+// app.use(cors({
+//     origin: allowedOrigin,
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Optional: specify allowed HTTP methods
+//     credentials: true, // Optional: enable cookies and other credentials
+// }));
 app.use(bodyParser.json());
 app.use(morgan('dev'))
 
